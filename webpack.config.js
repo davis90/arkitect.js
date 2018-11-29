@@ -1,23 +1,20 @@
 const path = require('path');
+const libraryName = 'Arkitect';
+const outputFile = libraryName + '.js';
 
 module.exports = {
-  entry: {
-    arkitect: [
-      `${__dirname}/src/abstract/Abstract.js`,
-      `${__dirname}/src/interface/Interface.js`,
-      `${__dirname}/src/singleton/Singleton.js`
-    ]
-  },
+  entry: `${__dirname}/src/main.js`,
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: outputFile,
+    library: libraryName,
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   resolve: {
     extensions: ['.js'],
     alias: {
-      abstract: path.resolve('src/abstract'),
-      interface: path.resolve('src/interface'),
-      singleton: path.resolve('src/singleton')
+      '@':  path.resolve('src')
     }
   },
   module: {
@@ -26,5 +23,5 @@ module.exports = {
       loader: 'babel-loader'
     }
     ]
-  },
+  }
 };

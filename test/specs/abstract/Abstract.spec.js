@@ -1,7 +1,7 @@
 /* eslint class-methods-use-this: 0 */
 
 import { expect, assert } from 'chai';
-import Abstract from 'abstract/Abstract';
+import Abstract from '@/abstract/Abstract';
 
 describe('InterfaceMixin', () => {
   const Abstract1 = class extends Abstract {

@@ -1,7 +1,7 @@
 /* eslint class-methods-use-this: 0 */
 
 import { expect, assert } from 'chai';
-import Singleton from 'singleton/Singleton';
+import Singleton from '@/singleton/Singleton';
 
 describe('Singleton', () => {
   let Unique1;

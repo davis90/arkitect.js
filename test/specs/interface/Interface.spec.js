@@ -1,7 +1,7 @@
 /* eslint class-methods-use-this: 0 */
 
 import { expect, assert } from 'chai';
-import Interface from 'interface/Interface';
+import Interface from '@/interface/Interface';
 
 describe('Interface', () => {
   const Interface1 = class extends Interface {

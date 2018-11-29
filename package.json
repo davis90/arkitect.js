@@ -2,7 +2,7 @@
   "name": "Arkitect.js",
   "version": "0.0.0",
   "description": "Small library to simplify code architecture",
-  "main": "./src/InterfaceMixin.js",
+  "main": "./src/main.js",
   "scripts": {
     "test": "karma start ./test/karma.conf",
     "build": "webpack",
@@ -29,5 +29,9 @@
     "mocha": "^5.2.0",
     "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
   }
 }
