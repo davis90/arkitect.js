@@ -1,6 +1,6 @@
 const path = require('path');
 
-const libraryName = 'Arkitect';
+const libraryName = 'arkitect';
 const outputFile = `${libraryName}.js`;
 
 module.exports = {
