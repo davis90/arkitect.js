@@ -1,11 +1,12 @@
 const path = require('path');
+
 const libraryName = 'Arkitect';
-const outputFile = libraryName + '.js';
+const outputFile = `${libraryName}.js`;
 
 module.exports = {
   entry: `${__dirname}/src/main.js`,
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'lib'),
     filename: outputFile,
     library: libraryName,
     libraryTarget: 'umd',
@@ -14,7 +15,7 @@ module.exports = {
   resolve: {
     extensions: ['.js'],
     alias: {
-      '@':  path.resolve('src')
+      '@': path.resolve('src')
     }
   },
   module: {
