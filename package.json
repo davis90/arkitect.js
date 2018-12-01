@@ -1,5 +1,5 @@
 {
-  "name": "Arkitect.js",
+  "name": "arkitect.js",
   "version": "0.0.0",
   "description": "Small library to simplify code architecture",
   "main": "./src/main.js",
@@ -8,7 +8,6 @@
     "build": "npm run build:prod && npm run build:dev",
     "build:prod": "webpack --mode production --output-filename Arkitect.min.js",
     "build:dev": "webpack --mode development --output-filename Arkitect.js",
-    "prepublish": "npm run build",
     "lint": "eslint . --ignore-path ./.eslintignore"
   },
   "author": "David H.",
