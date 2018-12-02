@@ -2,6 +2,8 @@
   "name": "arkitect.js",
   "version": "0.0.2",
   "description": "Small library to simplify code architecture",
+  "homepage": "https://github.com/davis90/arkitect.js",
+  "bugs": "https://github.com/davis90/Arkitect.js/issues",
   "main": "lib/arkitect.js",
   "scripts": {
     "test": "karma start ./test/karma.conf",
@@ -10,7 +12,14 @@
     "build:dev": "webpack --mode development --output-filename arkitect.js",
     "lint": "eslint . --ignore-path ./.eslintignore"
   },
-  "author": "David H.",
+  "person": {
+    "name": "davis90",
+    "url": "https://github.com/davis90"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davis90/arkitect.js.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
