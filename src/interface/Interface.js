@@ -17,7 +17,7 @@ class Interface {
   /**
    * Interface constructor. Interface can't be instantiated
    * @class
-   * @throws {TypeError} Try to instantiate an Interface
+   * @throws {Error} Try to instantiate an Interface
    */
   constructor() {
     throw new Error(`Interface.constructor : ${this.constructor.name} cannot be instantiated directly.`);
