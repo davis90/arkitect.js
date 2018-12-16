@@ -7,8 +7,9 @@
   "main": "lib/arkitect.js",
   "scripts": {
     "test": "karma start ./test/karma.conf",
-    "build": "npm run build:prod && npm run build:dev",
-    "build:prod": "webpack --mode production --output-filename arkitect.min.js",
+    "doc": "jsdoc --destination documentation -r ./src/",
+    "build": "npm run doc && npm run build:prod && npm run build:dev",
+    "build:prod": "webpack --mode production --output-filename arkitect.[contenthash].min.js",
     "build:dev": "webpack --mode development --output-filename arkitect.js",
     "lint": "eslint . --ignore-path ./.eslintignore"
   },
@@ -32,6 +33,7 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-plugin-import": "^2.14.0",
+    "jsdoc": "^3.5.5",
     "karma": "^3.1.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.2.0",
