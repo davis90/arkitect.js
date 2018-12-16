@@ -1,6 +1,7 @@
 /**
  * Get recursive property names recursively in all prototypes of a class definition
- * @param {Object} classDef : Definition of the class to find property names
+ * @private
+ * @param {Object} classDef - Object of the class to find property names
  * @returns {Array<string>} return all property names
  */
 const getRecursivePropertyNames = (classDef) => {
@@ -16,7 +17,6 @@ class Interface {
   /**
    * Interface constructor. Interface can't be instantiated
    * @class
-   * @Interface
    * @throws {TypeError} Try to instantiate an Interface
    */
   constructor() {
@@ -25,7 +25,7 @@ class Interface {
 
   /**
    * Check if an object implements this interface
-   * @param {Object} object : Object to check
+   * @param {Object} object - Object to check
    * @returns {boolean} return true if object implements this interface, false otherwise
    */
   static implements(object) {

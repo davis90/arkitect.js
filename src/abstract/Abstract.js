@@ -2,7 +2,6 @@ class Abstract {
   /**
    * Abstract constructor. Abstract can't be instantiated
    * @class
-   * @abstract
    * @throws {Error} Try to instantiate an abstract class
    */
   constructor() {

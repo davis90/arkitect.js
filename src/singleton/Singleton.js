@@ -1,7 +1,7 @@
 /**
  * get base prototype of Singleton class
  * @private
- * @return {Array<Object>} Base Singleton prototype
+ * @returns {Array<Object>} Base Singleton prototype
  */
 const getBaseClassSingleton = (classDef, Singleton) => {
   const parentClass = Object.getPrototypeOf(classDef);
@@ -43,11 +43,11 @@ class Singleton {
   }
 
   /**
-   * Get unique instance if is already instantiate.
+   * Get unique instance if is already instantiate, creates it otherwise.
    * If a subclass of this class was instantiate, it returns the subclass instance. If there are
    * many subclasses of one Singleton class, the uninstantiated class return undefined when call
    * getInstance, but cannot be instantiated.
-   * @method getInstance
+   * @param {*} args - Needed parameters to create instance
    * @returns {Singleton} return the unique instance
    */
   static instance(...args) {
