@@ -1,22 +1,65 @@
+/**
+ * get base prototype of Singleton class
+ * @private
+ * @return {Array<Object>} Base Singleton prototype
+ */
+const getBaseClassSingleton = (classDef, Singleton) => {
+  const parentClass = Object.getPrototypeOf(classDef);
+  if (parentClass === Singleton) {
+    return classDef;
+  }
+  return getBaseClassSingleton(parentClass, Singleton);
+};
+
+/**
+ * Symbol to save unique instance in constructor of class
+ * @private
+ * @type {Symbol}
+ */
+const instance = Symbol('instance');
+
+/**
+ * Array of active constructor to be able to create one instance of class
+ * @private
+ * @type {Object}
+ */
+const activeConstructors = {};
+
 class Singleton {
   /**
-   * Singleton constructor. Singleton class can be instantiate just one time
+   * Singleton constructor. Singleton class can be instantiate just one time.
    * @class
    */
   constructor() {
-    if (this.constructor.instance !== undefined) {
-      throw Error(`Singleton.constructor : ${this.constructor.name} cannot instantiated twice.`);
+    if (activeConstructors[this.constructor] !== true) {
+      throw Error(`Singleton.constructor : ${this.constructor.name} constructor cannot be used directly.`);
+    }
+    if (this.constructor === Singleton) {
+      throw Error(`Singleton.constructor : ${this.constructor.name} cannot be instantiated.`);
     } else {
-      this.constructor.instance = this;
+      delete activeConstructors[this.constructor];
+      getBaseClassSingleton(this.constructor, Singleton)[instance] = this;
     }
   }
 
   /**
-   * Get unique instance if is already instantiate
+   * Get unique instance if is already instantiate.
+   * If a subclass of this class was instantiate, it returns the subclass instance. If there are
+   * many subclasses of one Singleton class, the uninstantiated class return undefined when call
+   * getInstance, but cannot be instantiated.
+   * @method getInstance
    * @returns {Singleton} return the unique instance
    */
-  static getInstance() {
-    return this.instance;
+  static instance(...args) {
+    if (this[instance] !== undefined) {
+      if ((this[instance] instanceof this) === false) {
+        return undefined;
+      }
+    } else {
+      activeConstructors[this] = true;
+      getBaseClassSingleton(this, Singleton)[instance] = new this(...args);
+    }
+    return this[instance];
   }
 }
 
