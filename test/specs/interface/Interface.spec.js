@@ -17,8 +17,11 @@ describe('Interface', () => {
     }
   };
 
-
   it('Throws error if try to create an instance of Interface', () => {
+    expect(() => new Interface()).to.throw();
+  });
+
+  it('Throws error if try to create an instance of Interface subclass', () => {
     expect(() => new Interface1()).to.throw();
     expect(() => new Interface2()).to.throw();
   });
