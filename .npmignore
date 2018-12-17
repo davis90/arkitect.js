@@ -3,9 +3,11 @@ documentation/
 node_modules/
 src/
 test/
-.gitignore
-.eslintrc.js
 webpack.config.js
-.eslintignore
 .babelrc
 .browserslistrc
+.eslintrc.js
+.eslintignore
+.gitignore
+.travis.yml
+
