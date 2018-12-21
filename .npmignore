@@ -3,11 +3,11 @@ documentation/
 node_modules/
 src/
 test/
-webpack.config.js
 .babelrc
 .browserslistrc
-.eslintrc.js
 .eslintignore
+.eslintrc.js
 .gitignore
 .travis.yml
+webpack.config.js
 
