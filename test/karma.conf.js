@@ -11,7 +11,12 @@ module.exports = function (config) {
     ],
     preprocessors: {},
     webpack: webpackConfig,
-    frameworks: ['mocha', 'chai']
+    frameworks: ['mocha', 'chai'],
+    reporters: ['coverage'],
+    coverageReporter: {
+      reports: ['lcovonly'],
+      fixWebpackSourcePaths: true
+    }
   };
 
   options.preprocessors[`${__dirname}/specs/**/*.spec.js`] = ['webpack'];
