@@ -12,7 +12,7 @@ module.exports = function (config) {
     preprocessors: {},
     webpack: webpackConfig,
     frameworks: ['mocha', 'chai'],
-    reporters: ['coverage'],
+    reporters: ['progress', 'coverage'],
     coverageReporter: {
       reporters: [
         {
