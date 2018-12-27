@@ -17,7 +17,12 @@ module.exports = function (config) {
       reporters: [
         {
           type: 'lcov',
-          dir: './coverage',
+          dir: '../coverage',
+          subdir: '.'
+        },
+        {
+          type: 'lcovonly',
+          dir: '../coverage',
           subdir: '.'
         }
       ],

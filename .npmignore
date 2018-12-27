@@ -1,4 +1,5 @@
 .idea/
+coverage/
 documentation/
 node_modules/
 src/
