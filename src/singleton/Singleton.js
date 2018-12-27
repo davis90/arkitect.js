@@ -29,7 +29,7 @@ class Singleton {
   /**
    * Singleton constructor. Singleton class can be instantiate just one time.
    * @class
-   * @throws {Error} Try to instantiate Singleto
+   * @throws {Error} Try to instantiate Singleton
    * @throws {Error} Try to instantiate a Singleton from new operator
    */
   constructor() {
