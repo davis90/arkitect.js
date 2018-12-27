@@ -14,7 +14,13 @@ module.exports = function (config) {
     frameworks: ['mocha', 'chai'],
     reporters: ['coverage'],
     coverageReporter: {
-      reports: ['lcovonly'],
+      reporters: [
+        {
+          type: 'lcov',
+          dir: './coverage',
+          subdir: '.'
+        }
+      ],
       fixWebpackSourcePaths: true
     }
   };
