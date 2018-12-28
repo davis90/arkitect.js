@@ -33,11 +33,11 @@ class Singleton {
    * @throws {Error} Try to instantiate a Singleton from new operator
    */
   constructor() {
-    if (activeConstructors[this.constructor] !== true) {
-      throw Error(`Singleton.constructor : ${this.constructor.name} constructor cannot be used directly.`);
-    }
     if (this.constructor === Singleton) {
       throw Error(`Singleton.constructor : ${this.constructor.name} cannot be instantiated.`);
+    }
+    if (activeConstructors[this.constructor] !== true) {
+      throw Error(`Singleton.constructor : ${this.constructor.name} constructor cannot be used directly.`);
     } else {
       delete activeConstructors[this.constructor];
       getBaseClassSingleton(this.constructor, Singleton)[instance] = this;

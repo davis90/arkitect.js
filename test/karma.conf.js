@@ -12,9 +12,20 @@ module.exports = function (config) {
     preprocessors: {},
     webpack: webpackConfig,
     frameworks: ['mocha', 'chai'],
-    reporters: ['coverage'],
+    reporters: ['progress', 'coverage'],
     coverageReporter: {
-      reports: ['lcovonly'],
+      reporters: [
+        {
+          type: 'lcov',
+          dir: '../coverage',
+          subdir: '.'
+        },
+        {
+          type: 'lcovonly',
+          dir: '../coverage',
+          subdir: '.'
+        }
+      ],
       fixWebpackSourcePaths: true
     }
   };
