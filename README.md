@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/davis90/arkitect.js.svg?branch=master)](https://travis-ci.org/davis90/arkitect.js)
+[![Coverage Status](https://coveralls.io/repos/github/davis90/arkitect.js/badge.svg?branch=master)](https://coveralls.io/github/davis90/arkitect.js?branch=master)
+
 # arkitect.js
 
 arkitect.js is a library that aims to help create good software architectures
