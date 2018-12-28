@@ -30,15 +30,7 @@ describe('Singleton', () => {
     expect(() => new Unique2()).to.throw();
   });
 
-  it('get instance create an instance if it doesn\'t exists', () => {
-    let instance;
-    expect(() => {
-      instance = Unique1.instance();
-    }).to.not.throw();
-    assert.isTrue(instance instanceof Unique1);
-  });
-
-  it('get instance return always the same value', () => {
+  it('get instance return always the first created value', () => {
     let instance;
     expect(() => {
       instance = Unique1.instance();
