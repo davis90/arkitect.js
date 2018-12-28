@@ -25,3 +25,10 @@ script:
   - npm run test
 
 after_script: "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
+
+deploy:
+  provider: npm
+  email: "davis_france@hotmail.com"
+  api_key: "0262c3fc-2b8e-425f-a719-1e40a6e08c79"
+  on:
+    tags: true
