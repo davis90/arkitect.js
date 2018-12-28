@@ -16,7 +16,7 @@ It cannot be instantiated, but they can be subclassed.
     var arkitect = require('arkitect.js');
     var Abstract = arkitect.Abstract;
 
- #### **Examples:**
+ #### **Examples**
 
  Custom abstract class creation:
 

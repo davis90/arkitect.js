@@ -15,7 +15,7 @@ An interface is used to specify a behavior that classes must implement.
     var arkitect = require('arkitect.js');
     var Interface = arkitect.Interface;
 
- #### **Examples:**
+ #### **Examples**
 
  Interface Creation:
 

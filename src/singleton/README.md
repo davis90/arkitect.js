@@ -15,7 +15,7 @@ Singleton pattern restricts the instantiation of a class to one object.
     var arkitect = require('arkitect.js');
     var Singleton = arkitect.Singleton;
 
- #### **Examples:**
+ #### **Examples**
 
  Custom singleton class creation:
 
