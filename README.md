@@ -1,6 +1,10 @@
+![License](https://img.shields.io/github/license/davis90/arkitect.js.svg)
+![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)
 [![Build Status](https://travis-ci.org/davis90/arkitect.js.svg?branch=master)](https://travis-ci.org/davis90/arkitect.js)
+![Dependancies](https://img.shields.io/david/davis90/arkitect.js.svg)
+![Dev dependancies](https://img.shields.io/david/dev/davis90/arkitect.js.svg)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/davis90/arkitect.js.svg)
 [![Coverage Status](https://coveralls.io/repos/github/davis90/arkitect.js/badge.svg?branch=master)](https://coveralls.io/github/davis90/arkitect.js?branch=master)
-
 # arkitect.js
 
 arkitect.js is a library that aims to help create good software architectures
