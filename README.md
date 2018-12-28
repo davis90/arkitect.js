@@ -11,11 +11,11 @@ arkitect.js is a library that aims to help create good software architectures
 
 ## **Utils**
 
-[Abstract](src/abstract/README.md): Abstract class may contain a mix of methods declared with or without an
+[Abstract](src/abstract): Abstract class may contain a mix of methods declared with or without an
 implementation. It cannot be instantiated, but they can be subclassed.
 
-[Interface](src/interface/README.md): An interface is used to specify a behavior that classes must implement.
+[Interface](src/interface): An interface is used to specify a behavior that classes must implement.
 
 ## **GoF patterns**
 
-[Singleton](src/singleton/README.md): Singleton pattern restricts the instantiation of a class to one object.
+[Singleton](src/singleton): Singleton pattern restricts the instantiation of a class to one object.
