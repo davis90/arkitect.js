@@ -1,5 +1,3 @@
-/* eslint class-methods-use-this: 0 */
-
 import { expect, assert } from 'chai';
 import Singleton from '@/singleton/Singleton';
 
@@ -14,6 +12,11 @@ describe('Singleton', () => {
     Unique2 = class extends Unique1 {
     };
     Unique3 = class extends Unique1 {
+      constructor(va11, val2) {
+        super();
+        this.val1 = va11;
+        this.val2 = val2;
+      }
     };
   });
 
@@ -49,6 +52,14 @@ describe('Singleton', () => {
   it('Uninstantiated superclass return instance of subclass that have been instantiated', () => {
     const inst1 = Unique2.instance();
     assert.equal(inst1, Unique1.instance());
+  });
+
+  it('Instance have been created with arguments passed to instance function', () => {
+    const inst = Unique3.instance('coucou', 3, 7);
+    assert.equal(inst, Unique1.instance());
+    assert.equal(inst, Unique1.instance(7, 10, 'lol'));
+    assert.equal(inst.val1, 'coucou');
+    assert.equal(inst.val2, 3);
   });
 
   it('Uninstantiated subclass doesn\'t return instance of other subclass that share same superclass singleton', () => {
