@@ -55,16 +55,16 @@ describe('Implementation()', () => {
   });
 
   it('Throws error if try to instantiate Implementation with unvalid interface definition', () => {
-    const Impl5 = class extends Implementation({}) {};
-    const Impl6 = class extends Implementation(() => {}) {};
-    const Impl7 = class extends Implementation(3) {};
-    const Impl8 = class extends Implementation('Interface') {};
-    const Impl9 = class extends Implementation(true) {};
-    expect(() => new Impl5()).to.throw();
+    const Impl6 = class extends Implementation({}) {};
+    const Impl7 = class extends Implementation(() => {}) {};
+    const Impl8 = class extends Implementation(3) {};
+    const Impl9 = class extends Implementation('Interface') {};
+    const Impl10 = class extends Implementation(true) {};
     expect(() => new Impl6()).to.throw();
     expect(() => new Impl7()).to.throw();
     expect(() => new Impl8()).to.throw();
     expect(() => new Impl9()).to.throw();
+    expect(() => new Impl10()).to.throw();
   });
 
   it('Throws error if try to instantiate Implementation that doesn\'t implement his interface', () => {
