@@ -2,10 +2,10 @@ import Interface from '@/interface/Interface';
 
 /**
  * Implementation mixin Function
- * @param {Interface} interfaceDef - A interface definition
+ * @param {Interface} interfaceDefs - A interface definition
  * @constructor
  */
-const Implementation = interfaceDef => class {
+const Implementation = (...interfaceDefs) => class {
   /**
    * Implementation class constructor. Interface can't be instantiated
    * @class
@@ -14,11 +14,13 @@ const Implementation = interfaceDef => class {
    */
   constructor() {
     // eslint-disable-next-line no-prototype-builtins
-    if (Interface.isPrototypeOf(interfaceDef) === false) {
+    const areValidInterfaces = interfaceDefs.every(i => Interface.isPrototypeOf(i));
+    if (areValidInterfaces === false) {
       throw new TypeError(`Implementation.constructor : interface definition have to be an ${Interface.name} class.`);
     }
-    if (interfaceDef.implements(this) === false) {
-      throw Error(`Implementation.constructor : ${this.constructor.name} doesn't implement.`);
+    const areAllImplemented = interfaceDefs.every(i => i.implements(this));
+    if (interfaceDefs.length === 0 || areAllImplemented === false) {
+      throw Error(`Implementation.constructor : ${this.constructor.name} doesn't implement given interface.`);
     }
   }
 };
