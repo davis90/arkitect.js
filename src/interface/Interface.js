@@ -29,7 +29,7 @@ class Interface {
    * @returns {boolean} return true if object implements this interface, false otherwise
    */
   static implements(object) {
-    const propertyNames = getRecursivePropertyNames(this).filter(p => ['constructor', 'implements'].indexOf(p) < 0);
+    const propertyNames = getRecursivePropertyNames(this).filter(p => !['constructor', 'implements'].includes(p));
     return propertyNames.every((p) => {
       if ((typeof this.prototype[p] === 'function') && !(typeof object[p] === 'function')) {
         return false;
