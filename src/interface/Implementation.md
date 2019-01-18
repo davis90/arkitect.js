@@ -17,11 +17,15 @@ Implementation is used to specify class that implements an interface.
 
  #### **Examples**
 
- Interface creation:
+ Interfaces creation:
 
     class MyInterface extends Interface {
        toString(){}
        compute(){}
+    }
+
+    class MyInterface2 extends Interface {
+       learn(){}
     }
 
  Implementation creation:
@@ -33,10 +37,10 @@ Implementation is used to specify class that implements an interface.
        }
 
        toString(){
-          return this._name;
+         return this._name;
        }
        compute(val){
-          return val + 10;
+         return val + 10;
        }
     }
 
@@ -51,16 +55,36 @@ Implementation is used to specify class that implements an interface.
       }
      }
 
-     class MyImplementation3 extends Implementation() {
-     class MyImplementation4 extends Implementation(3) {
+     class MyImplementation3 extends Implementation(MyInterface, MyInterface2) {
+      constructor(){
+        this._value = 14;
+      }
+      toString(){
+        return String(this._value);
+      }
+      compute(val){
+        return val + 10;
+      }
+      learn(){
+        return null;
+      }
+     }
+
+     class MyImplementation4 extends Implementation() {}
+     class MyImplementation5 extends Implementation(3) {}
+     class MyImplementation6 extends Implementation({}) {}
 
  Test if they implement the interface:
 
     const impl1 = new MyImplementation(); /* Works. MyImplementation implements
                                             MyInterface.*/
-    const impl2 = new Implementation2(); /* Throws an error. MyImplementation2
+    const impl2 = new MyImplementation2(); /* Throws an error. MyImplementation2
                                             doesn't implement MyInterface. */
-    const impl3 = new Implementation3(); /* Throws an error. MyImplementation3
+    const impl3 = new MyImplementation3(); /* Works. MyImplementation3 implements
+                                            MyInterface and MyInterface2.*/
+    const impl4 = new MyImplementation4(); /* Throws an error. MyImplementation4
                                             doesn't implement any valid Interface. */
-    const impl4 = new Implementation4(); /* Throws an error. MyImplementation4
+    const impl5 = new MyImplementation5(); /* Throws an error. MyImplementation5
+                                            doesn't implement any valid Interface. */
+    const impl6 = new MyImplementation6(); /* Throws an error. MyImplementation5
                                             doesn't implement any valid Interface. */
