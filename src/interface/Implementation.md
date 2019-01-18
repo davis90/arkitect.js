@@ -54,7 +54,6 @@ Implementation is used to specify class that implements an interface.
      class MyImplementation3 extends Implementation() {
      class MyImplementation4 extends Implementation(3) {
 
-
  Test if they implement the interface:
 
     const impl1 = new MyImplementation(); /* Works. MyImplementation implements
