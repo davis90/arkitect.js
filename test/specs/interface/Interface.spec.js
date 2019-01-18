@@ -5,16 +5,13 @@ import Interface from '@/interface/Interface';
 
 describe('Interface', () => {
   const Interface1 = class extends Interface {
-    func1() {
-    }
+    func1() {}
 
-    func2() {
-    }
+    func2() {}
   };
 
   const Interface2 = class extends Interface1 {
-    funct3() {
-    }
+    func3() {}
   };
 
   it('Throws error if try to create an instance of Interface', () => {
@@ -28,15 +25,12 @@ describe('Interface', () => {
 
   it('Test if class implements interface', () => {
     const Implement1 = class {
-      func1() {
-      }
+      func1() {}
 
-      func2() {
-      }
+      func2() {}
     };
     const Implement2 = class extends Implement1 {
-      funct3() {
-      }
+      func3() {}
     };
     const impl1 = new Implement1();
     const impl2 = new Implement2();
@@ -48,15 +42,12 @@ describe('Interface', () => {
 
   it('Test if class doesn\'t implement interface', () => {
     const Implement1 = class {
-      func4() {
-      }
+      func4() {}
 
-      func5() {
-      }
+      func5() {}
     };
     const Implement2 = class extends Implement1 {
-      funct3() {
-      }
+      func3() {}
     };
     const impl1 = new Implement1();
     const impl2 = new Implement2();
