@@ -4,12 +4,12 @@
   "description": "Small library to simplify code architecture",
   "homepage": "https://github.com/davis90/arkitect.js",
   "bugs": "https://github.com/davis90/Arkitect.js/issues",
-  "main": "lib/arkitect.js",
+  "main": "lib/arkitect.min.js",
   "scripts": {
     "test": "cross-env BABEL_ENV=test karma start ./test/karma.conf.js --single-run",
     "doc": "jsdoc --destination documentation -r ./src/",
     "build": "npm run doc && npm run build:prod && npm run build:dev",
-    "build:prod": "webpack --mode production --output-filename arkitect.[contenthash].min.js",
+    "build:prod": "webpack --mode production --output-filename arkitect.min.js",
     "build:dev": "webpack --mode development --output-filename arkitect.js",
     "lint": "eslint . --ignore-path ./.eslintignore"
   },
