@@ -4,6 +4,7 @@ const libraryName = 'arkitect';
 const outputFile = `${libraryName}.js`;
 
 module.exports = {
+  target: "node",
   entry: `${__dirname}/src/main.js`,
   output: {
     path: path.resolve(__dirname, 'lib'),
