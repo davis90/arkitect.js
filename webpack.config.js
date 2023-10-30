@@ -1,29 +1,26 @@
 const path = require('path');
 
-const libraryName = 'arkitect';
-const outputFile = `${libraryName}.js`;
-
 module.exports = {
-  target: "node",
-  entry: `${__dirname}/src/main.js`,
-  output: {
-    path: path.resolve(__dirname, 'lib'),
-    filename: outputFile,
-    library: libraryName,
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+  entry: './src/index.ts',
+  module: {
+    rules: [
+      {
+        test: /\.ts?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: ['.js'],
-    alias: {
-      '@': path.resolve('src')
-    }
+    extensions: ['.tsx', '.ts', '.js'],
   },
-  module: {
-    rules: [{
-      test: /.js$/,
-      loader: 'babel-loader'
-    }
-    ]
-  }
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  devServer: {
+    static: path.join(__dirname, "dist"),
+    compress: true,
+    port: 4000,
+  },
 };
